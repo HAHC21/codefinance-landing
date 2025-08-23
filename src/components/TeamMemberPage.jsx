@@ -11,7 +11,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
           <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1">
             <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
               <img 
-                src={memberId === '1' ? '/assets/dey_picture' : memberId === '4' ? '/assets/yeison_picture' : `/member-${memberId}.jpg`}
+                src={memberId === '1' ? '/dey_picture.jpeg' : memberId === '2' ? '/harold_picture.jpeg' : memberId === '4' ? '/yeison_picture.jpg' : `/member-${memberId}.jpg`}
                 alt={memberName}
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {

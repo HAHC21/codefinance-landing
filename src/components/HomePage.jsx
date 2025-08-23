@@ -50,28 +50,29 @@ const HomePage = ({ onPageChange }) => {
   return (
     <div className="bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Hero Section - Full screen height minus navigation */}
-      <div className="relative overflow-hidden h-[calc(100vh-4rem)] flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+      <div className="relative overflow-hidden h-[calc(100vh-4rem)] flex items-center bg-cover bg-center bg-no-repeat bg-[url('/herobg.png')]">
+        <div className="absolute inset-0"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Bienvenidos a{' '}
-              <span className="text-green-800">Code</span>
-              <span className="text-yellow-500">Finance</span>
+              <span className="text-green-600">Code</span>
+              <span className="text-yellow-600">Finance</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               Un equipo de cuatro profesionales apasionados por las finanzas y la tecnología, 
               comprometidos con la excelencia y la innovación en el sector financiero.
             </p>
-            <div className="flex justify-center gap-4 flex-wrap">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 flex-wrap">
               <button 
                 onClick={() => scrollToSection('team-section')}
-                className="btn btn-primary bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer"
+                className="w-[67%] md:w-auto btn btn-primary bg-yellow-500 text-black hover:bg-yellow-600 cursor-pointer"
               >
                 Conoce Nuestro Equipo
               </button>
               <button 
                 onClick={() => scrollToSection('values-section')}
-                className="btn btn-primary bg-green-800 text-white hover:bg-green-900 cursor-pointer"
+                className="w-[67%] md:w-auto btn btn-primary bg-green-800 text-white hover:bg-green-900 cursor-pointer"
               >
                 Conoce Nuestros Valores
               </button>
@@ -80,10 +81,10 @@ const HomePage = ({ onPageChange }) => {
         </div>
       </div>
 
-      {/* Team Overview Section - Full screen height */}
-      <div id="team-section" className="min-h-screen bg-white flex items-center relative py-16">
+      {/* Team Overview Section - Half screen height on desktop, full on mobile */}
+      <div id="team-section" className="min-h-screen md:min-h-[50vh] bg-white flex items-center relative py-16 md:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="text-center mb-12 md:mb-8">
             <h2 className="text-3xl font-bold text-black mb-4">
               Nuestro Equipo
             </h2>
@@ -92,7 +93,7 @@ const HomePage = ({ onPageChange }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-12">
             {teamMembers.map((member) => (
               <div 
                 key={member.id} 
@@ -128,7 +129,7 @@ const HomePage = ({ onPageChange }) => {
           </div>
 
           {/* Back to top arrow */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 md:hidden">
             <button
               onClick={scrollToTop}
               className="w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer"
@@ -141,10 +142,10 @@ const HomePage = ({ onPageChange }) => {
         </div>
       </div>
 
-      {/* Values Section - Full screen height */}
-      <div id="values-section" className="h-screen bg-green-800 text-white flex items-center relative">
+      {/* Values Section - Half screen height on desktop, full on mobile */}
+      <div id="values-section" className="min-h-screen md:min-h-[50vh] bg-green-800 text-white flex items-center relative py-16 md:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-8">
             <h2 className="text-3xl font-bold mb-4">
               Nuestros Valores
             </h2>
@@ -153,7 +154,7 @@ const HomePage = ({ onPageChange }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 md:mb-12">
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-yellow-500 flex items-center justify-center">
                 <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,18 +191,18 @@ const HomePage = ({ onPageChange }) => {
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Back to top arrow */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button
-            onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer"
-          >
-            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-          </button>
+          {/* Back to top arrow */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 md:hidden">
+            <button
+              onClick={scrollToTop}
+              className="w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer"
+            >
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -2,24 +2,27 @@
 
 @layer base {
   html {
-    font-family: 'Cambria', serif;
+    font-family: 'Lato', sans-serif;
   }
   
   body {
-    @apply bg-white text-black;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .btn {
-    @apply px-4 py-2 rounded-full cursor-pointer transition-colors duration-200;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
   }
   
   .btn-primary {
-    @apply bg-yellow-500 text-black hover:bg-yellow-600;
+    @apply bg-yellow-500 text-black hover:bg-yellow-600 focus:ring-yellow-500;
   }
   
   .input-field {
-    @apply px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:border-yellow-500;
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500;
   }
 }
