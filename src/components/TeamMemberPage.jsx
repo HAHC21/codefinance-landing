@@ -7,12 +7,12 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-2">
+        <div className="text-center mb-8">
+          <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1">
             <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
               <img 
-                src={`/member-${memberId}.jpg`} 
-                alt={`${memberName}`}
+                src={memberId === '1' ? '/assets/dey_picture' : memberId === '4' ? '/assets/yeison_picture' : `/member-${memberId}.jpg`}
+                alt={memberName}
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -20,21 +20,15 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 }}
               />
               <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                <svg className="w-24 h-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-black mb-4">
-            {memberName}
-          </h1>
-          <p className="text-xl text-yellow-500 font-semibold mb-6">
-            {role}
-          </p>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {description}
-          </p>
+          <h1 className="text-4xl font-bold text-black mb-2">{memberName}</h1>
+          <p className="text-xl text-green-800 mb-4">{role}</p>
+          <p className="text-gray-600 max-w-2xl mx-auto">{description}</p>
         </div>
 
         {/* Section Toggle Buttons */}

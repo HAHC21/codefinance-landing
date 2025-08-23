@@ -5,10 +5,10 @@ const Navigation = ({ activePage, onPageChange }) => {
 
   const teamMembers = [
     { id: 'home', name: 'Inicio', path: '/' },
-    { id: 'member1', name: 'Carlos Rodríguez', path: '/miembro-1' },
-    { id: 'member2', name: 'Ana María Silva', path: '/miembro-2' },
-    { id: 'member3', name: 'David Martínez', path: '/miembro-3' },
-    { id: 'member4', name: 'Laura Fernández', path: '/miembro-4' },
+    { id: 'member1', name: 'Deydianith Lobope', path: '/miembro-1' },
+    { id: 'member2', name: 'Harold Hidalgo', path: '/miembro-2' },
+    { id: 'member3', name: 'Jose Manuel Correa', path: '/miembro-3' },
+    { id: 'member4', name: 'Yeison Santa', path: '/miembro-4' },
   ];
 
   return (
@@ -17,12 +17,17 @@ const Navigation = ({ activePage, onPageChange }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/CodeFinance.png" 
-              alt="CodeFinance Logo" 
-              className="h-12 w-auto mr-3"
-            />
-            <span className="text-xl font-bold text-yellow-500">CodeFinance</span>
+            <button
+              onClick={() => onPageChange('home')}
+              className="flex items-center hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+            >
+              <img 
+                src="/CodeFinance.png" 
+                alt="CodeFinance Logo" 
+                className="h-12 w-auto mr-3"
+              />
+              <span className="text-xl font-bold text-yellow-500">CodeFinance</span>
+            </button>
           </div>
 
           {/* Desktop Navigation */}

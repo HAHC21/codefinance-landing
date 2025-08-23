@@ -2,27 +2,27 @@ const HomePage = ({ onPageChange }) => {
   const teamMembers = [
     {
       id: 1,
-      name: 'Carlos Rodríguez',
-      role: 'Director Financiero',
-      image: '/member-1.jpg'
+      name: 'Deydianith Lobope',
+      role: 'Analista de Procesos',
+      image: '/dey_picture.jpeg'
     },
     {
       id: 2,
-      name: 'Ana María Silva',
-      role: 'Analista de Riesgos',
-      image: '/member-2.jpg'
+      name: 'Harold Hidalgo',
+      role: 'Desarrollador de Software',
+      image: '/harold_picture.jpeg'
     },
     {
       id: 3,
-      name: 'David Martínez',
+      name: 'Jose Manuel Correa',
       role: 'Especialista en Tecnología Financiera',
       image: '/member-3.jpg'
     },
     {
       id: 4,
-      name: 'Laura Fernández',
-      role: 'Consultora de Inversiones',
-      image: '/member-4.jpg'
+      name: 'Yeison Santa',
+      role: 'Analista de Infraestructura',
+      image: '/yeison_picture.jpg'
     }
   ];
 
@@ -81,9 +81,9 @@ const HomePage = ({ onPageChange }) => {
       </div>
 
       {/* Team Overview Section - Full screen height */}
-      <div id="team-section" className="h-screen bg-white flex items-center relative">
+      <div id="team-section" className="min-h-screen bg-white flex items-center relative py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl font-bold text-black mb-4">
               Nuestro Equipo
             </h2>
@@ -92,14 +92,14 @@ const HomePage = ({ onPageChange }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20">
             {teamMembers.map((member) => (
               <div 
                 key={member.id} 
                 className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300"
                 onClick={() => handleMemberClick(member.id)}
               >
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1 group-hover:scale-105 transition-transform duration-300">
                   <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                     <img 
                       src={member.image} 
@@ -111,33 +111,33 @@ const HomePage = ({ onPageChange }) => {
                       }}
                     />
                     <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                      <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">
+                <h3 className="text-sm md:text-xl font-semibold text-black mb-1 md:mb-2 px-1">
                   {member.name}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-xs md:text-base text-gray-600 px-1">
                   {member.role}
                 </p>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Back to top arrow */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <button
-            onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer"
-          >
-            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-          </button>
+          {/* Back to top arrow */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <button
+              onClick={scrollToTop}
+              className="w-12 h-12 rounded-full bg-yellow-500 hover:bg-yellow-600 transition-colors duration-200 flex items-center justify-center shadow-lg hover:shadow-xl cursor-pointer"
+            >
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 

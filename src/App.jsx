@@ -10,22 +10,34 @@ function App() {
   const teamMembers = {
     member1: {
       memberId: '1',
-      memberName: 'Carlos Rodríguez',
-      role: 'Director Financiero',
-      description: 'Experto en estrategias financieras corporativas con más de 10 años de experiencia en el sector bancario y de inversiones.',
-      skills: ['Análisis Financiero', 'Gestión de Riesgos', 'Planificación Estratégica', 'Mercados de Capitales'],
+      memberName: 'Deydianith Lobope',
+      role: 'Analista de Procesos',
+      description: 'Profesional apasionada por la optimización de procesos y la automatización, con experiencia en gestión documental y análisis de eficiencia operativa.',
+      skills: [
+        'Modelado y documentación de procesos',
+        'Análisis de eficiencia operativa',
+        'Gestión documental (Mantum / Hércules)',
+        'Automatización de tareas con n8n',
+        'Conectividad con APIs y flujos RPA básicos',
+        'Uso avanzado de Excel',
+        'Fundamentos de programación en Python',
+        'Pensamiento estratégico y enfoque a resultados'
+      ],
       experience: [
-        { title: 'Director Financiero', company: 'Banco de Bogotá', period: '2020 - Presente' },
-        { title: 'Gerente de Inversiones', company: 'Grupo Aval', period: '2017 - 2020' }
+        { title: 'Analista de Procesos', company: 'Soberana Colombia', period: '2023 - Presente' },
+        { title: 'Administradora de Punto de Venta', company: 'Panadería antojitos de u', period: '2019 - 2022' },
+        { title: 'Auxiliar Administrativa y chef', company: 'Restaurantes y empresas familiares', period: '2014 - 2019' }
       ],
       education: [
-        { degree: 'Maestría en Finanzas', institution: 'Universidad de los Andes', year: '2017' },
-        { degree: 'Ingeniería Industrial', institution: 'Universidad Nacional', year: '2015' }
+        { degree: 'Estudiante de Ingeniería Financiera y de Riesgos', institution: 'CEIPA Business School', year: 'Becaria destacada - Actualmente cursando' },
+        { degree: 'Técnico Laboral en Auxiliar Administrativo', institution: 'Instituto politécnico de Colombia', year: '2023' },
+        { degree: 'Técnico Laboral en Cocina', institution: 'Escuela gastronómica de Medellín', year: '2023' },
+        { degree: 'Bachiller Académica', institution: 'Mariscal sucre (Buenavista, Córdoba)', year: '2012' }
       ]
     },
     member2: {
       memberId: '2',
-      memberName: 'Ana María Silva',
+      memberName: 'Harold Hidalgo',
       role: 'Analista de Riesgos',
       description: 'Especialista en evaluación y gestión de riesgos financieros, con amplia experiencia en modelos cuantitativos y análisis estadístico.',
       skills: ['Modelado de Riesgos', 'Análisis Estadístico', 'Regulaciones Financieras', 'Python/R'],
@@ -40,7 +52,7 @@ function App() {
     },
     member3: {
       memberId: '3',
-      memberName: 'David Martínez',
+      memberName: 'Jose Manuel Correa',
       role: 'Especialista en Tecnología Financiera',
       description: 'Desarrollador de soluciones tecnológicas para el sector financiero, experto en blockchain, APIs y sistemas de trading automatizado.',
       skills: ['Blockchain', 'APIs Financieras', 'Machine Learning', 'Desarrollo Full-Stack'],
@@ -55,17 +67,31 @@ function App() {
     },
     member4: {
       memberId: '4',
-      memberName: 'Laura Fernández',
-      role: 'Consultora de Inversiones',
-      description: 'Asesora experta en inversiones personales y corporativas, con especialización en mercados emergentes y portafolios diversificados.',
-      skills: ['Asesoría de Inversiones', 'Análisis de Mercados', 'Gestión de Portafolios', 'Finanzas Personales'],
+      memberName: 'Yeison Santa',
+      role: 'Analista de Infraestructura',
+      description: 'Profesional especializado en infraestructura tecnológica, desarrollo de aplicaciones y administración de sistemas Microsoft, con amplia experiencia en automatización y gestión de tecnologías empresariales.',
+      skills: [
+        'Automatización de procesos',
+        'Desarrollo de aplicaciones en Power APPS',
+        'Administración de Directorios Activo (AD)',
+        'Reportes en Power Bi',
+        'Administrador de Microsoft 365',
+        'Instructor de Microsoft',
+        'Fundamentos de programación en Python',
+        'Reparación de computadores',
+        'Redes de computación',
+        'Fundamentos de nube (azure y aws)'
+      ],
       experience: [
-        { title: 'Consultora Senior', company: 'Credicorp Capital', period: '2018 - Presente' },
-        { title: 'Analista de Inversiones', company: 'BBVA Colombia', period: '2015 - 2018' }
+        { title: 'Analista de infraestructura', company: 'LANDERS Y C.I.A - Colombia', period: '2023 - Presente' },
+        { title: 'Director de aplicaciones', company: 'AUTOCONTROLES EMPRESARIAS - España', period: '2022 - 2023' },
+        { title: 'Analista de desarrollo', company: 'BGW - Colombia', period: '2020 - 2022' }
       ],
       education: [
-        { degree: 'MBA en Finanzas', institution: 'INCAE Business School', year: '2018' },
-        { degree: 'Economía', institution: 'Universidad del Rosario', year: '2015' }
+        { degree: 'Estudiante de Ingeniería de sistemas', institution: 'CEIPA Business School', year: 'Actualmente cursando' },
+        { degree: '7 semestres en Tecnología de sistemas de información', institution: 'ITM', year: '2008-2010' },
+        { degree: 'Técnico de reparación de computadores y Redes', institution: 'Politécnico Mundial', year: '2007' },
+        { degree: 'Bachiller Académica', institution: 'Colegio ciudadela las americas', year: '2005' }
       ]
     }
   }
