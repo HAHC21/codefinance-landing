@@ -9,6 +9,7 @@ const Navigation = ({ activePage, onPageChange }) => {
     { id: 'member2', name: 'Harold Hidalgo', path: '/miembro-2' },
     { id: 'member3', name: 'Jose Manuel Correa', path: '/miembro-3' },
     { id: 'member4', name: 'Yeison Santa', path: '/miembro-4' },
+    { id: 'ethics', name: 'Código de Ética', path: '/codigo-etica' },
   ];
 
   const renderNavButton = (member) => (
@@ -17,8 +18,12 @@ const Navigation = ({ activePage, onPageChange }) => {
       onClick={() => onPageChange(member.id)}
       className={`px-3 py-2 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${
         activePage === member.id
-          ? 'bg-yellow-500 text-black'
-          : 'text-white hover:bg-green-800 hover:text-yellow-500'
+          ? member.id === 'ethics' 
+            ? 'bg-green-800 text-white'
+            : 'bg-yellow-500 text-black'
+          : member.id === 'ethics'
+            ? 'bg-green-800 text-white hover:bg-green-900'
+            : 'text-white hover:bg-green-800 hover:text-yellow-500'
       }`}
     >
       {member.name}
@@ -34,8 +39,12 @@ const Navigation = ({ activePage, onPageChange }) => {
       }}
       className={`block w-full text-left px-3 py-2 rounded-full text-base font-medium transition-colors duration-200 ${
         activePage === member.id
-          ? 'bg-yellow-500 text-black'
-          : 'text-white hover:bg-green-800 hover:text-yellow-500'
+          ? member.id === 'ethics' 
+            ? 'bg-green-800 text-white'
+            : 'bg-yellow-500 text-black'
+          : member.id === 'ethics'
+            ? 'bg-green-800 text-white hover:bg-green-900'
+            : 'text-white hover:bg-green-800 hover:text-yellow-500'
       }`}
     >
       {member.name}

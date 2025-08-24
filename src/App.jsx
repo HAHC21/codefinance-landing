@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Navigation from './components/Navigation'
 import HomePage from './components/HomePage'
 import TeamMemberPage from './components/TeamMemberPage'
+import EthicsPage from './components/EthicsPage'
 import { teamMembers } from './data/teamMembers'
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         return <TeamMemberPage {...teamMembers.member3} />
       case 'member4':
         return <TeamMemberPage {...teamMembers.member4} />
+      case 'ethics':
+        return <EthicsPage onPageChange={setActivePage} />
       default:
         return <HomePage onPageChange={setActivePage} />
     }
