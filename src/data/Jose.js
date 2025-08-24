@@ -4,8 +4,8 @@ export const Jose = {
     image: '/jose_picture.jpeg',
     role: 'Especialista en Tecnología Financiera',
     email: "",
-    city: "",
-    linkedin: "",
+    city: "Medellín, Colombia",
+    linkedin: "https://www.linkedin.com/in/jos%C3%A9-m-correa-0134bb37b/",
     description: '',
     skills: [
         'Resiliencia ante desafíos',
