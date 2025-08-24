@@ -1,7 +1,88 @@
 import { useState } from 'react';
 
-const TeamMemberPage = ({ memberId, memberName, role, description, skills, experience, education }) => {
+const TeamMemberPage = ({ memberId, memberName, role, description, skills, experience, education, bitacora, image }) => {
   const [activeSection, setActiveSection] = useState('bio');
+
+  // Helper functions for rendering Bitácora sections
+  const renderLifeMilestones = () => (
+    <div className="space-y-4">
+      {bitacora.lifeMilestones.split('\n\n').map((paragraph, index) => (
+        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+          {paragraph.trim()}
+        </p>
+      ))}
+    </div>
+  );
+
+  const renderHobbies = () => (
+    <div className="space-y-4">
+      {bitacora.hobbies.split('\n\n').map((paragraph, index) => (
+        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+          {paragraph.trim()}
+        </p>
+      ))}
+    </div>
+  );
+
+  const renderIkigai = () => (
+    <div className="flex justify-center">
+      <img 
+        src={bitacora.ikigai} 
+        alt={`Ikigai de ${memberName}`}
+        className="max-w-full h-auto rounded-lg shadow-lg"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'block';
+        }}
+      />
+      <div className="hidden text-center text-gray-500 py-8">
+        <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <p>Imagen de Ikigai no disponible</p>
+      </div>
+    </div>
+  );
+
+  const renderCoreInterests = () => (
+    <div className="space-y-4">
+      {bitacora.coreInterests.split('\n\n').map((paragraph, index) => (
+        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+          {paragraph.trim()}
+        </p>
+      ))}
+    </div>
+  );
+
+  const renderPersonalEthics = () => (
+    <div className="space-y-4">
+      {bitacora.personalEthics.split('\n\n').map((paragraph, index) => (
+        <p key={index} className="text-gray-700 leading-relaxed mb-4">
+          {paragraph.trim()}
+        </p>
+      ))}
+    </div>
+  );
+
+  const renderPretest = () => (
+    <div className="flex justify-center">
+      <img 
+        src={bitacora.pretest} 
+        alt={`Pretest de ${memberName}`}
+        className="max-w-full h-auto rounded-lg shadow-lg"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.nextSibling.style.display = 'block';
+        }}
+      />
+      <div className="hidden text-center text-gray-500 py-8">
+        <svg className="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <p>Imagen de Pretest no disponible</p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-16">
@@ -11,7 +92,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
           <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1">
             <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
               <img 
-                src={memberId === '1' ? '/dey_picture.jpeg' : memberId === '2' ? '/harold_picture.jpeg' : memberId === '4' ? '/yeison_picture.jpg' : `/member-${memberId}.jpg`}
+                src={image}
                 alt={memberName}
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
@@ -155,24 +236,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 </svg>
                 Hitos de mi historia vida
               </h3>
-              <div className="space-y-4">
-                <div className="border-l-4 border-green-800 pl-4">
-                  <p className="text-gray-700">• Nacimiento y primeros años</p>
-                  <p className="text-gray-500 text-sm">1990 - Bogotá, Colombia</p>
-                </div>
-                <div className="border-l-4 border-green-800 pl-4">
-                  <p className="text-gray-700">• Graduación universitaria</p>
-                  <p className="text-gray-500 text-sm">2012 - Universidad Nacional</p>
-                </div>
-                <div className="border-l-4 border-green-800 pl-4">
-                  <p className="text-gray-700">• Primer trabajo profesional</p>
-                  <p className="text-gray-500 text-sm">2013 - Sector Financiero</p>
-                </div>
-                <div className="border-l-4 border-green-800 pl-4">
-                  <p className="text-gray-700">• Fundación de CodeFinance</p>
-                  <p className="text-gray-500 text-sm">2024 - Con el equipo</p>
-                </div>
-              </div>
+              {renderLifeMilestones()}
             </div>
 
             {/* Hobbies */}
@@ -183,24 +247,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 </svg>
                 Hobbies
               </h3>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Lectura de libros financieros</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Running y ejercicio físico</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Cocina internacional</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Viajes y exploración</span>
-                </div>
-              </div>
+              {renderHobbies()}
             </div>
 
             {/* Ikigai */}
@@ -211,24 +258,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 </svg>
                 Ikigai
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium">Lo que amo hacer:</p>
-                  <p className="text-gray-600 text-sm">Analizar mercados financieros y crear soluciones innovadoras</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium">Lo que el mundo necesita:</p>
-                  <p className="text-gray-600 text-sm">Sistemas financieros más inclusivos y transparentes</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium">Lo que puedo ser pagado por hacer:</p>
-                  <p className="text-gray-600 text-sm">Consultoría financiera y desarrollo de tecnología fintech</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium">Lo que soy bueno haciendo:</p>
-                  <p className="text-gray-600 text-sm">Análisis de datos, gestión de riesgos y liderazgo de equipos</p>
-                </div>
-              </div>
+              {renderIkigai()}
             </div>
 
             {/* Interés en el núcleo */}
@@ -239,28 +269,7 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 </svg>
                 Interés en el núcleo
               </h3>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-800 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Innovación en fintech</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-800 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Sostenibilidad financiera</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-800 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Educación financiera</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-800 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Tecnología blockchain</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-800 rounded-full mr-3"></div>
-                  <span className="text-gray-700">Inteligencia artificial aplicada</span>
-                </div>
-              </div>
+              {renderCoreInterests()}
             </div>
 
             {/* Código de ética personal */}
@@ -271,32 +280,18 @@ const TeamMemberPage = ({ memberId, memberName, role, description, skills, exper
                 </svg>
                 Código de ética personal
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Integridad</p>
-                  <p className="text-gray-600 text-sm">Actuar siempre con honestidad y transparencia en todas las decisiones financieras</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Responsabilidad</p>
-                  <p className="text-gray-600 text-sm">Asumir las consecuencias de mis acciones y decisiones profesionales</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Excelencia</p>
-                  <p className="text-gray-600 text-sm">Buscar constantemente la mejora y la calidad en todo lo que hago</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Empatía</p>
-                  <p className="text-gray-600 text-sm">Considerar siempre el impacto de mis decisiones en los demás</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Innovación</p>
-                  <p className="text-gray-600 text-sm">Buscar soluciones creativas y disruptivas para los desafíos financieros</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 font-medium mb-2">Colaboración</p>
-                  <p className="text-gray-600 text-sm">Trabajar en equipo para lograr objetivos comunes y compartir conocimiento</p>
-                </div>
-              </div>
+              {renderPersonalEthics()}
+            </div>
+
+            {/* Pretest */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="text-2xl font-semibold text-black mb-6 flex items-center">
+                <svg className="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Pretest
+              </h3>
+              {renderPretest()}
             </div>
           </div>
         )}

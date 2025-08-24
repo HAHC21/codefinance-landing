@@ -1,30 +1,7 @@
+import { teamMembers } from '../data/teamMembers';  
+
 const HomePage = ({ onPageChange }) => {
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'Deydianith Lobope',
-      role: 'Analista de Procesos',
-      image: '/dey_picture.jpeg'
-    },
-    {
-      id: 2,
-      name: 'Harold Hidalgo',
-      role: 'Desarrollador de Software',
-      image: '/harold_picture.jpeg'
-    },
-    {
-      id: 3,
-      name: 'Jose Manuel Correa',
-      role: 'Especialista en Tecnología Financiera',
-      image: '/member-3.jpg'
-    },
-    {
-      id: 4,
-      name: 'Yeison Santa',
-      role: 'Analista de Infraestructura',
-      image: '/yeison_picture.jpg'
-    }
-  ];
+
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -94,17 +71,17 @@ const HomePage = ({ onPageChange }) => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-12">
-            {teamMembers.map((member) => (
+            {Object.values(teamMembers).map((member) => (
               <div 
-                key={member.id} 
+                key={member.memberId} 
                 className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300"
-                onClick={() => handleMemberClick(member.id)}
+                onClick={() => handleMemberClick(member.memberId)}
               >
                 <div className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-green-800 to-yellow-500 p-1 group-hover:scale-105 transition-transform duration-300">
                   <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
                     <img 
                       src={member.image} 
-                      alt={member.name}
+                      alt={member.memberName}
                       className="w-full h-full object-cover rounded-full"
                       onError={(e) => {
                         e.target.style.display = 'none';
@@ -119,7 +96,7 @@ const HomePage = ({ onPageChange }) => {
                   </div>
                 </div>
                 <h3 className="text-sm md:text-xl font-semibold text-black mb-1 md:mb-2 px-1">
-                  {member.name}
+                  {member.memberName}
                 </h3>
                 <p className="text-xs md:text-base text-gray-600 px-1">
                   {member.role}
