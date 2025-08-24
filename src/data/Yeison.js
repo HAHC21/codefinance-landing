@@ -2,6 +2,9 @@ export const Yeison = {
     memberId: '4',
     memberName: 'Yeison Santa',
     image: '/yeison_picture.jpg',
+    email: "",
+    city: "",
+    linkedin: "",
     role: 'Analista de Infraestructura',
     description: 'Profesional especializado en infraestructura tecnológica, desarrollo de aplicaciones y administración de sistemas Microsoft, con amplia experiencia en automatización y gestión de tecnologías empresariales.',
     skills: [
@@ -28,11 +31,11 @@ export const Yeison = {
         { degree: 'Bachiller Académica', institution: 'Colegio ciudadela las americas', year: '2005' }
     ],
     bitacora: {
-        lifeMilestones: 'Nacimiento en Medellín, Colombia en 1990. Primera reparación de computadora a los 15 años. Técnico en redes en 2007 del Politécnico Mundial. Experiencia en España en 2022 con Autocontroles Empresariales.',
-        hobbies: 'La reparación y modding de computadoras es mi hobby más antiguo y querido. Desde que era adolescente, me fascinaba desarmar y reconstruir equipos, experimentando con overclocking y personalización extrema. El gaming y eSports son mi pasión competitiva, especialmente juegos de estrategia y FPS donde puedo aplicar mi conocimiento técnico. La tecnología y gadgets me mantienen siempre al día con las últimas innovaciones, y disfruto probando nuevos dispositivos y software. La música electrónica es mi compañera constante mientras trabajo, especialmente géneros como trance y techno que me ayudan a mantener el ritmo durante largas sesiones de programación.',
+        lifeMilestones: 'Cuando de Yarumal mi padre se vino a vivir a Medellín. Cuando termine mi bachillerato. El día que me case con mi amada esposa. Cuando nacieron mis hijos. El día que conocí a Jesús. Cuando ingrese a la universidad CEIPA',
+        hobbies: 'Jugar futbol. Comer. Dormir. Leer. Estar en la redes',
         ikigai: '/yeison_ikigai.png',
         pretest: '/yeison_pretest.png',
-        coreInterests: '',
-        personalEthics: '',
+        coreInterests: 'Aprender al máximo los diferentes módulos ya que es una materia para mi muy nueva, se muestra muy interesante en la explicación del profe su explicación te lleva a querer aprender mas del tema y creo que para mi rol en la empresa que trabajo se muestra super importante ',
+        personalEthics: 'Soy fiel y leal a mi esposa, mis hijos y mi casa soy amador de las personas mis prioridades son claras Dios, yo , mi esposa  mis hijos y mi familia, mentir no es una opción y dañar a los demás menos que a mi mismo.',
     }
 }

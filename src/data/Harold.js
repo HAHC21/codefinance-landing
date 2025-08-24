@@ -1,6 +1,9 @@
 export const Harold = {
     memberId: '2',
     memberName: 'Harold Hidalgo',
+    email: "",
+    city: "",
+    linkedin: "",
     role: 'Desarrollador de Software',
     image: '/harold_picture.jpeg',
     description: '',
