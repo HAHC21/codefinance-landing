@@ -5,7 +5,7 @@ export const Dey = {
     role: 'Analista de Procesos',
     email: "deydianith_lobope@virtual.ceipa.edu.co",
     city: "Medellín, Colombia",
-    linkedin: "https://www.linkedin.com/in/deydianith-lobo/  ",
+    linkedin: "https://www.linkedin.com/in/deydianith-lobo/",
     description: 'Profesional apasionada por la optimización de procesos y la automatización, con experiencia en gestión documental y análisis de eficiencia operativa.',
     skills: [
       'Modelado y documentación de procesos',

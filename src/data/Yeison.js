@@ -4,7 +4,7 @@ export const Yeison = {
     image: '/yeison_picture.jpg',
     email: "yeison_santa@virtual.ceipa.edu.co",
     city: "Medellín, Colombia",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/yeison-santa-26696123b/",
     role: 'Analista de Infraestructura',
     description: 'Profesional especializado en infraestructura tecnológica, desarrollo de aplicaciones y administración de sistemas Microsoft, con amplia experiencia en automatización y gestión de tecnologías empresariales.',
     skills: [

@@ -3,7 +3,7 @@ export const Harold = {
     memberName: 'Harold Hidalgo',
     email: "harold_hidalgoca@virtual.ceipa.edu.co",
     city: "Medellín, Colombia",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/hahc21/",
     role: 'Desarrollador de Software',
     image: '/harold_picture.jpeg',
     description: '',
